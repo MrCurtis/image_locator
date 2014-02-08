@@ -1,38 +1,37 @@
 <!--IMAGE LOCATOR UI -->
 
 <html>
-	<head>
-		<title>Points of Interest Picker</title>
-		<script src="scripts/1.7.2.jquery.min.js"></script>		
-		<script src="scripts/bootstrap.min.js"></script>
-		<script src="//www.openlayers.org/api/OpenLayers.js"></script>
-		<script src="scripts/imageLocator.js"></script>				
-		<link href="styles/UIstyle.css" rel="stylesheet" type="text/css" >	
-	    <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">	
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-	</head>
-	<body>	
-		<h1>Points of Interest Picker</h1>
+  <head>
+    <title>Points of Interest Picker</title>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="//www.openlayers.org/api/OpenLayers.js"></script>
+    <script src="scripts/imageLocator.js" type="text/javascript"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="styles/UIstyle.css" rel="stylesheet" type="text/css" >
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+  </head>
+  <body>
+    <h1>Points of Interest Picker</h1>
 
-		<!--Information Views-->
-		<div id="dashboard">
-			<div id="myCarousel" class="carousel slide">  
-  				<!-- Carousel items -->  
-  				<div class="carousel-inner">  
-    				<img class="active item" src="images/01.jpg"></img>  
-    				<img class="item" src="images/02.jpg"></img>  
-  				</div>  
-  				
-	  			<!-- Carousel nav -->  
-	  			<a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>  
-	  			<a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>  
-			</div>  
+    <!--Information Views-->
+    <div id="dashboard">
+      <div id="myCarousel" class="carousel slide">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <img class="active item" src="images/01.jpg"></img>
+          <img class="item" src="images/02.jpg"></img>
+        </div>
 
-			<div id="mapView">*corresponding map location*</div>
-		</div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+      </div>
 
-		<!--Input Elements-->
+      <div id="mapView">*corresponding map location*</div>
+    </div>
 
+    <!--Input Elements-->
 
-	</body>
+  </body>
 </html>
