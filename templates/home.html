@@ -49,6 +49,10 @@
 		</div>
 
 		<!--Input Elements-->
+		
+		{% for drone_image in drone_images %}
+		    <img src = "{{drone_image.image.url}}" />
+		{% endfor %}
 
 
 	</body>
