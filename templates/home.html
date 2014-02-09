@@ -13,16 +13,14 @@
     <nav class="navbar navbar-default" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="/"><img src="/static/images/AirTriage_small.png" /></a>
+          <a class="navbar-brand" href="/"><img class="nav-img" src="/static/images/AirTriage_small.png" /></a>
         </div>
         <div class="nav navbar-nav">
-          <form class="navbar-form navbar-left form form-inline" role="form" action="/triage/" method="post" id="triageForm">
+          <form class="navbar-form navbar-left" role="form" action="/triage/" method="post" id="triageForm">
             {% csrf_token %}
             {{ form | bootstrap_inline}}
             <input type='hidden' name='id' value={{random_image.id}} />
-            <div id="buttonContainer" class="pull-right">
-              <input id="nextImageButton" src="/static/images/button.png" type="image" value="Submit" />
-            </div>
+            <input class="nav-img" src="/static/images/button.png" type="image" value="Submit" />
           </form>
         </div>
     </nav>
