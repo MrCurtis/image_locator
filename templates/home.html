@@ -1,8 +1,4 @@
-<!--IMAGE LOCATOR UI -->
-
 <!doctype html>
-
-{% load staticfiles %}
 
 {% load staticfiles %}
 
@@ -30,21 +26,18 @@
     				<img class="active item" src="/static/images/01.jpg"></img>  
     				<img class="item" src="/static/images/02.jpg"></img>  
   				</div>  
-  				
-	  			<!-- Carousel nav -->  
+  				<!-- Carousel nav -->  
 	  			<a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>  
 	  			<a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>  
 			</div>  
-
 			<div id="mapView">*corresponding map location*</div>
 		</div>
-
+			
 		<!--Input Elements-->
 		
-		{% for drone_image in drone_images %}
-		    <img src = "{{drone_image.image.url}}" />
-		{% endfor %}
+<!--		{% for drone_image in drone_images %}-->
+<!--		    <img src = "{{drone_image.image.url}}" />-->
+<!--		{% endfor %}-->
 
-
-	</body>
+    </body>
 </html>
