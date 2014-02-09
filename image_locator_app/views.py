@@ -26,11 +26,10 @@ def home(request):
         else:
             print 'The form is not valid' #for debugging purposes only. Remove later
 
-        id = image_object.id + 1
+        image_object = DroneImage.objects.get(pk=image_object.id + 1)
     else:
-        id = 1
+        image_object = DroneImage.objects.get()
     try:
-        image_object = DroneImage.objects.get(pk=id)
         form = DroneImageForm(instance=image_object)
     except:
         return redirect('/')
