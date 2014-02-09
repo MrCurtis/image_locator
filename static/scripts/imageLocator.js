@@ -42,10 +42,10 @@ var setupKeyboard = function(){
 			
 			//medical
 			if(e.keyCode =='52'){
-			   if(document.getElementById("id_medical").checked == false) {
-					document.getElementById("id_medical").checked = true;
+			   if(document.getElementById("id_medicine").checked == false) {
+					document.getElementById("id_medicine").checked = true;
 				}
-				else{ document.getElementById("id_medical").checked = false;
+				else{ document.getElementById("id_medicine").checked = false;
 				}
 			};
 			
