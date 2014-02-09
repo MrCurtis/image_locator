@@ -7,28 +7,25 @@
     <title>Points of Interest Picker</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-    <link rel = "stylesheet" href = "{% static 'map_tutorial.css' %}">
     <link href="{% static 'styles/UIstyle.css' %}" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, user-scalable=no">
   </head>
   <body>
     
     <form action="/" method="post" id="triageForm">
-        {% csrf_token %}
-        {{ form }}
-         <input type='hidden' name='id' value={{random_image.id}} />
-         <div id="buttonContainer">
-            <input id="nextImageButton" src="/static/images/button.png" type="image" value="Submit" />
-         </div>
+      {% csrf_token %}
+      {{ form }}
+      <input type='hidden' name='id' value={{random_image.id}} />
+      <div id="buttonContainer">
+        <input id="nextImageButton" src="/static/images/button.png" type="image" value="Submit" />
+      </div>
     </form>
     
     <div id="dashboard">
       <img id = "imageView" src="{{random_image.image.url}}">
-      
       <div id="map" class="map leaflet-container leaflet-fade-anim" tabindex="0">
     </div>
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js" type="text/javascript"></script>
+
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script src="{% static 'scripts/map_tutorial.js' %}"></script>
     <script src="{% static 'scripts/imageLocator.js' %}" type="text/javascript"></script>
