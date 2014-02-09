@@ -1,0 +1,12 @@
+/*Image Locator style */
+
+/*global style*/
+html {font-family: Arial !important; height:100%;}
+body {height:100%;}
+h1 {font-weight:bold; font-size:2em; text-align:center; color:red;}
+
+/*main elements*/
+#dashboard {overflow:hidden; margin-top:2em; height:80%}
+
+#myCarousel { background-color: grey; width:45%; height:60%; float:left; margin-left:1em;}
+#mapView { background-color: grey; width:45%; height:60%; float:right; margin-right:1em;}
