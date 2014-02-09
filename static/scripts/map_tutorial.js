@@ -32,5 +32,3 @@ L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 map.on('click', onMapClick);
-
-
