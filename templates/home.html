@@ -27,7 +27,7 @@
       
       <div id="map" class="map leaflet-container leaflet-fade-anim" tabindex="0">
       {% for drone_image in drone_images %}
-        <script> addMarker({{drone_image.latitude}}, {{drone_image.longitude}}, '{{drone_image.status}}') </script>
+        <script> addMarker({{drone_image.latitude}}, {{drone_image.longitude}}, '{{drone_image.water}}', '{{drone_image.food}}') </script>
       {% endfor %}
     </div>
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>

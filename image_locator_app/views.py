@@ -13,8 +13,11 @@ def home(request):
 
         if form.is_valid():
             image_object = DroneImage.objects.get(pk = request.POST.get("id"))
-            image_object.status = request.POST.get("status")
-            image_object.comment = request.POST.get("comment")
+            image_object.water = request.POST.get("water", False)
+            image_object.food = request.POST.get("food", False)
+            image_object.shelter = request.POST.get("shelter", False)
+            image_object.medicine = request.POST.get("medicine", False)
+            image_object.protection = request.POST.get("protection", False)
             image_object.save()
 
         else:

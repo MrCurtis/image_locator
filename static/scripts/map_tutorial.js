@@ -4,9 +4,10 @@ function onMapClick(e)
     alert([e.latlng.lat, e.latlng.lng]);
 }
 
-function addMarker(latitude, longitude, status)
+function addMarker(latitude, longitude, water, food)
 {   
-    if (status == 'I')
+    console.log(water);
+    if (water == 'True')
     {
         var circle = L.circle([latitude, longitude], 500, {
         color: 'red',
@@ -14,7 +15,7 @@ function addMarker(latitude, longitude, status)
         fillOpacity: 0.5
         }).addTo(map);
     }
-    else if (status == 'N')
+    else if (food == 'True')
     {
         var circle = L.circle([latitude, longitude], 500, {
         color: 'blue',
@@ -24,7 +25,7 @@ function addMarker(latitude, longitude, status)
     }
 }
 
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('map').setView([51.505, -0.09], 2);
 
 L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
