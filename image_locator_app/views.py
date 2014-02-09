@@ -30,7 +30,7 @@ def home(request):
     else:
         form = None
 
-    return render_to_response('home.html', {'drone_images': DroneImage.objects.all(), 'random_image': image_object, 'form': form }, context_instance = RequestContext(request))
+    return render_to_response('home.html', {'random_image': image_object, 'form': form }, context_instance = RequestContext(request))
 
 
 
