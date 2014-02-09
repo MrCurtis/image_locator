@@ -8,8 +8,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', 'image_locator_app.views.landing', name='landing'),
+
     # Examples:
-    url(r'^$', 'image_locator_app.views.home', name='home'),
+    url(r'^triage/$', 'image_locator_app.views.home', name='home'),
     # url(r'^image_locator/', include('image_locator.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
