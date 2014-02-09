@@ -14,7 +14,6 @@ def home(request):
         if form.is_valid():
             image_object = DroneImage.objects.get(pk = request.POST.get("id"))
             image_object.status = request.POST.get("status")
-            image_object.interest_type = request.POST.get("interest_type")
             image_object.comment = request.POST.get("comment")
             image_object.save()
             

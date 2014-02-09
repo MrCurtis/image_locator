@@ -6,8 +6,16 @@ body {height:100%;}
 h1 {font-weight:bold; font-size:2em; text-align:center; color:red;}
 
 /*main elements*/
+#id_interest_type {height:40px; visibility:hidden}
+#id_comment {height:40px;}
+
 #dashboard {overflow:hidden; margin-top:2em; height:100%}
 
-#myCarousel { background-color: grey; width:45%; height:60%; float:left; margin-left:1em;}
-#mapView { background-color: grey; width:45%; height:60%; float:right; margin-right:1em;}
+
 #map { background-color: grey; width:45%; height:60%; float:right; margin-right:1em;}
+
+#buttonContainer {float:left; width:10%; height:60%;}
+#nextImageButton { top:100px; width:60px; height:60px; background-image:url(/static/images/button.png) no-repeat;}
+
+#imageView { background-color: grey; width:40%; height:60%; float:left; margin-left:5%;}
+

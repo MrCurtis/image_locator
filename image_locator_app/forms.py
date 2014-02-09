@@ -4,5 +4,5 @@ from django.forms import ModelForm, TextInput
 class DroneImageForm(ModelForm):
     class Meta:
         model = DroneImage
-        fields = ['status', 'interest_type', 'comment',]
+        fields = ['status', 'comment', 'water', 'sanitation', 'food', 'shelter', 'medicine', 'protection', 'obstruction',]
         

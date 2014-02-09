@@ -10,9 +10,14 @@ class DroneImage(models.Model):
     heading = models.FloatField()
     tilt = models.FloatField()
     roll = models.FloatField()
-    STATUS_TYPES = ( ('I', 'Important'), ('N', 'Nothing'), )
-    status = models.CharField(max_length=1, choices=STATUS_TYPES, blank=True)
-    interest_type = models.TextField(blank=True) 
+    
+    water = models.BooleanField(initial=False)
+    sanitation = models.BooleanField(initial=False)
+    food = models.BooleanField(initial=False)
+    shelter = models.BooleanField(initial=False)
+    medicine = models.BooleanField(initial=False)
+    protection = models.BooleanField(initial=False)
+    obstruction = models.BooleanField(initial=False) 
     comment = models.TextField(blank=True)
     
   

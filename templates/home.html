@@ -18,19 +18,17 @@
   </head>
   <body>
     
-    <h1>Points of Interest Picker</h1>
-    
     <form action="/" method="post">
         {% csrf_token %}
-        {{ form.status }}
-        {{ form.interest_type}}
-        {{ form.comment }}
+        {{ form }}
          <input type='hidden' name='id' value={{random_image.id}} />
-        <input type="submit" value="Submit" />
+         <div id="buttonContainer">
+            <input id="nextImageButton" src="/static/images/button.png" type="image" value="Submit" />
+         </div>
     </form>
     
     <div id="dashboard">
-      <img src="{{random_image.image.url}}">
+      <img id = "imageView" src="{{random_image.image.url}}">
       
       <div id="map" class="map leaflet-container leaflet-fade-anim" tabindex="0">
       <script src = "{% static 'scripts/map_tutorial.js' %}"></script>
