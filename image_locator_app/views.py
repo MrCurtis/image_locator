@@ -23,15 +23,12 @@ def home(request):
             image_object.protection = request.POST.get("protection", False)
             image_object.save()
 
-        else:
-            print 'The form is not valid' #for debugging purposes only. Remove later
-
-        image_object = DroneImage.objects.get(pk=image_object.id + 1)
+        try:
+            image_object = DroneImage.objects.get(pk=image_object.id + 1)
+        except:
+            return redirect('/')
     else:
-        image_object = DroneImage.objects.all()[:1][0]
-    try:
-        form = DroneImageForm(instance=image_object)
-    except:
-        return redirect('/')
+        image_object = DroneImage.objects.first()
+    form = DroneImageForm(instance=image_object)
 
     return render_to_response('home.html', {'random_image': image_object, 'form': form }, context_instance = RequestContext(request))
