@@ -1,30 +1,75 @@
 
-//Initialisation
+var setupKeyboard = function(){
+	
+	console.log("--- keyboard setup ---");
 
-//var changeImage = function() {
-//	//document.imageView.src = "images/01.jpg"
-//};
+	document.onkeydown = function(e){
+		
+			//leftKeyPress
+			if(e.keyCode == '39'){
+				console.log('NEXT');
+				document.getElementById("testForm").submit();
+			};
+			
+			//--- STATUS ---
+			
+			//Water
+			if(e.keyCode =='49'){
+			   if(document.getElementById("id_water").checked == false) {
+					document.getElementById("id_water").checked = true;
+				}
+				else{ document.getElementById("id_water").checked = false;
+				}
+			};
+			
+			//food
+			if((e.keyCode =='50')){
+				if(document.getElementById("id_food").checked == false) {
+					document.getElementById("id_food").checked = true;
+				}
+				else{ document.getElementById("id_food").checked = false;
+				}
+			};
+			
+			//shelter
+			if(e.keyCode =='51'){
+			   if(document.getElementById("id_shelter").checked == false) {
+					document.getElementById("id_shelter").checked = true;
+				}
+				else{ document.getElementById("id_shelter").checked = false;
+				}
+			};
+			
+			//medical
+			if(e.keyCode =='52'){
+			   if(document.getElementById("id_medical").checked == false) {
+					document.getElementById("id_medical").checked = true;
+				}
+				else{ document.getElementById("id_medical").checked = false;
+				}
+			};
+			
+			//protection
+			if(e.keyCode =='53'){
+			   if(document.getElementById("id_protection").checked == false) {
+					document.getElementById("id_protection").checked = true;
+				}
+				else{ document.getElementById("id_protection").checked = false;
+				}
+			};
+			
+		};
 
+}
 
+// on initialisation
 window.onload = function() {
 
-//	//object literal for image data
 
-//	this.loadedImage = {
-//		src: "filePath",
-//		lat: 101010,
-//		lon: 1010101
-//	};
-	
-	//setup carousel
-	$('.carousel').carousel();
-	
 	
 	console.log("--- Initialising ---");
 
-	//set the initial image
-//	this.loadedImage.src ="images/01.jpg";
-//	changeImage(this.loadedImage.src);
+    setupKeyboard();
 
 	//	Create the map
 	map = new OpenLayers.Map("mapView");
@@ -48,15 +93,15 @@ window.onload = function() {
 	map.addLayer(kmllayer);
 	
 	//Set start centrepoint from device's location and zoom
-	navigator.geolocation.getCurrentPosition(function(position) {
-		var lonLat = new OpenLayers.LonLat(position.coords.longitude,position.coords.latitude)
-			.transform(
-				new OpenLayers.Projection("EPSG:4326"),	//transform from WGS 1984
-				map.getProjectionObject()				//to Spherical Mercator Projection
-			);
-		map.setCenter(lonLat, 1 // Zoom out to global level so user can zoom in on area of interest.
-		);
-	});
+//	navigator.geolocation.getCurrentPosition(function(position) {
+//		var lonLat = new OpenLayers.LonLat(position.coords.longitude,position.coords.latitude)
+//			.transform(
+//				new OpenLayers.Projection("EPSG:4326"),	//transform from WGS 1984
+//				map.getProjectionObject()				//to Spherical Mercator Projection
+//			);
+//		map.setCenter(lonLat, 1 // Zoom out to global level so user can zoom in on area of interest.
+//		);
+//	});
  
 	// Add a selector control to the kmllayer with popup functions
 	var controls = {
