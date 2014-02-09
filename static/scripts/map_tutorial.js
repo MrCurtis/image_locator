@@ -6,7 +6,7 @@ function onMapClick(e)
 
 function addMarker(latitude, longitude, water, food)
 {   
-    console.log(water);
+    console.log("sdfsdfsfsdfsdfsfdfv");
     if (water == 'True')
     {
         var circle = L.circle([latitude, longitude], 500, {
