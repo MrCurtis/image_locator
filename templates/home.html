@@ -32,6 +32,6 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script src="{% static 'scripts/map_tutorial.js' %}"></script>
     <script src="{% static 'scripts/imageLocator.js' %}" type="text/javascript"></script>
-    <script>map.setView(L.latLng({{random_image.latitude}}, {{random_image.longitude}}));</script>
+    <script>initMap({{random_image.latitude}}, {{random_image.longitude}});</script>
   </body>
 </html>
