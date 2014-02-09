@@ -28,7 +28,7 @@ def home(request):
 
         image_object = DroneImage.objects.get(pk=image_object.id + 1)
     else:
-        image_object = DroneImage.objects.get()
+        image_object = DroneImage.objects.all()[:1][0]
     try:
         form = DroneImageForm(instance=image_object)
     except:
