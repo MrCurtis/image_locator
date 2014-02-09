@@ -11,13 +11,13 @@ class DroneImage(models.Model):
     tilt = models.FloatField()
     roll = models.FloatField()
     
-    water = models.BooleanField(initial=False)
-    sanitation = models.BooleanField(initial=False)
-    food = models.BooleanField(initial=False)
-    shelter = models.BooleanField(initial=False)
-    medicine = models.BooleanField(initial=False)
-    protection = models.BooleanField(initial=False)
-    obstruction = models.BooleanField(initial=False) 
+    water = models.BooleanField(default=False)
+    sanitation = models.BooleanField(default=False)
+    food = models.BooleanField(default=False)
+    shelter = models.BooleanField(default=False)
+    medicine = models.BooleanField(default=False)
+    protection = models.BooleanField(default=False)
+    obstruction = models.BooleanField(default=False) 
     comment = models.TextField(blank=True)
     
   
