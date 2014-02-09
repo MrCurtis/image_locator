@@ -8,7 +8,7 @@ var setupKeyboard = function(){
 			//leftKeyPress
 			if(e.keyCode == '39'){
 				console.log('NEXT');
-				document.getElementById("testForm").submit();
+				document.getElementById("triageForm").submit();
 			};
 			
 			//--- STATUS ---
