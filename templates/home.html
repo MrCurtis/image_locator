@@ -33,7 +33,7 @@
       <div id="map" class="map leaflet-container leaflet-fade-anim" tabindex="0">
       <script src = "{% static 'scripts/map_tutorial.js' %}"></script>
       {% for drone_image in drone_images %}
-        <script> addMarker({{drone_image.lattitude}}, {{drone_image.longtitude}}, '{{drone_image.status}}') </script>
+        <script> addMarker({{drone_image.latitude}}, {{drone_image.longitude}}, '{{drone_image.status}}') </script>
       {% endfor %}
 
 <!--      <div id="mapView"></div>-->

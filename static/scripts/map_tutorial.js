@@ -4,11 +4,11 @@ function onMapClick(e)
     alert([e.latlng.lat, e.latlng.lng]);
 }
 
-function addMarker(lattitude, longtitude, status)
+function addMarker(latitude, longitude, status)
 {   
     if (status == 'I')
     {
-        var circle = L.circle([lattitude, longtitude], 500, {
+        var circle = L.circle([latitude, longitude], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
@@ -16,7 +16,7 @@ function addMarker(lattitude, longtitude, status)
     }
     else if (status == 'N')
     {
-        var circle = L.circle([lattitude, longtitude], 500, {
+        var circle = L.circle([latitude, longitude], 500, {
         color: 'blue',
         fillColor: 'blue',
         fillOpacity: 0.5

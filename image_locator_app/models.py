@@ -3,8 +3,8 @@ from django.db import models
 
 class DroneImage(models.Model):
     image = models.FileField(upload_to='drone_images', blank=True)
-    lattitude = models.FloatField()
-    longtitude = models.FloatField()
+    latitude = models.FloatField()
+    longitude = models.FloatField()
     altitude = models.FloatField()
     heading = models.FloatField()
     tilt = models.FloatField()
