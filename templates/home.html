@@ -8,36 +8,40 @@
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="//www.openlayers.org/api/OpenLayers.js"></script>
-    <script src="{% static "scripts/imageLocator.js" %}" type="text/javascript"></script>
+<!--    <script src="{% static 'scripts/imageLocator.js' %}" type="text/javascript"></script>-->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="{% static "styles/UIstyle.css" %}" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel = "stylesheet" href = "{% static 'map_tutorial.css' %}">
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <link href="{% static 'styles/UIstyle.css' %}" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, user-scalable=no">
   </head>
   <body>
+    
     <h1>Points of Interest Picker</h1>
-
-    <!--Information Views-->
+    
+    <form action="/" method="post">
+        {% csrf_token %}
+        {{ form.status }}
+        {{ form.interest_type}}
+        {{ form.comment }}
+         <input type='hidden' name='id' value={{random_image.id}} />
+        <input type="submit" value="Submit" />
+    </form>
+    
     <div id="dashboard">
-      <div id="myCarousel" class="carousel slide">
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-          <img class="active item" src="{% static "images/01.jpg" %}"></img>
-          <img class="item" src="{% static "images/02.jpg" %}"></img>
-        </div>
+      <img src="{{random_image.image.url}}">
+      
+      <div id="map" class="map leaflet-container leaflet-fade-anim" tabindex="0">
+      <script src = "{% static 'scripts/map_tutorial.js' %}"></script>
+      {% for drone_image in drone_images %}
+        <script> addMarker({{drone_image.lattitude}}, {{drone_image.longtitude}}, '{{drone_image.status}}') </script>
+      {% endfor %}
 
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
-      </div>
-
-      <div id="mapView">*corresponding map location*</div>
+<!--      <div id="mapView"></div>-->
     </div>
-
-    <!--Input Elements-->
-
-<!--    {% for drone_image in drone_images %}-->
-<!--        <img src = "{{drone_image.image.url}}" />-->
-<!--    {% endfor %}-->
+    
+        
 
   </body>
 </html>
