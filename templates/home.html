@@ -26,14 +26,12 @@
       <img id = "imageView" src="{{random_image.image.url}}">
       
       <div id="map" class="map leaflet-container leaflet-fade-anim" tabindex="0">
-      {% for drone_image in drone_images %}
-        <script> addMarker({{drone_image.latitude}}, {{drone_image.longitude}}, '{{drone_image.water}}', '{{drone_image.food}}') </script>
-      {% endfor %}
     </div>
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script src="{% static 'scripts/map_tutorial.js' %}"></script>
     <script src="{% static 'scripts/imageLocator.js' %}" type="text/javascript"></script>
+    <script>map.setView(L.latLng({{random_image.latitude}}, {{random_image.longitude}}));</script>
   </body>
 </html>
