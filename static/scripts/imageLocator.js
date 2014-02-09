@@ -35,7 +35,7 @@ window.onload = function() {
 	var kmllayer = new OpenLayers.Layer.Vector("KML", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
-				url: "./images/2013-07-25 19-54-04.tlog.kml",
+				url: "/static/images/2013-07-25 19-54-04.tlog.kml",
 				format: new OpenLayers.Format.KML({
 					extractStyles: true,
 					extractAttributes: true,
